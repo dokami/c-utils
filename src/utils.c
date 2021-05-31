@@ -68,7 +68,7 @@ int64_t millis_now()
 	struct timeval tv;
 
 	gettimeofday(&tv, NULL);
-    return ((int64_t)tv.tv_sec) * 1000LL + ((int64_t)tv.tv_usec) / 1000LL;
+	return ((int64_t)tv.tv_sec) * 1000LL + ((int64_t)tv.tv_usec) / 1000LL;
 }
 
 int64_t millis_since(int64_t last)

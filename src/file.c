@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#ifndef WIN32
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
@@ -163,3 +165,5 @@ error:
 		safe_free(*base_name);
 	goto cleanup;
 }
+
+#endif

@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#ifndef WIN32
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -304,3 +306,5 @@ void channel_manager_teardown(struct channel_manager *ctx)
 
 	hash_map_free(&ctx->channels, channel_hash_map_callback);
 }
+
+#endif

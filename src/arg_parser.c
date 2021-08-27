@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#ifndef WIN32
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
@@ -228,3 +230,5 @@ int ap_parse(int argc, char *argv[], struct ap_option *ap_opts, void *data)
 
 	return optind;
 }
+
+#endif

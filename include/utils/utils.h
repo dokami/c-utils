@@ -77,12 +77,14 @@
 #endif
 #endif
 
-#ifndef __packed
-#define __packed        __attribute__((__packed__))
-#endif
-
+#ifdef WIN32
+#define PACK(_decl_) __pragma(pack(push,1)) _decl_ __pragma(pack(pop))
+#define __weak
+#else
+#define PACK(_decl_) _decl_ __attribute__((__packed__))
 #undef __weak
-#define __weak          __attribute__((weak))
+#define __weak __attribute__((weak))
+#endif
 
 /**
  * @brief Rounds up 32-bit v to nearest power of 2. If v is already a power

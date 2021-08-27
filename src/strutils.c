@@ -10,6 +10,10 @@
 #include <utils/strutils.h>
 #include <utils/memory.h>
 
+#ifdef WIN32
+#define strtok_r strtok_s
+#endif
+
 static inline int hex2int(char ch)
 {
 	if (ch >= '0' && ch <= '9')

@@ -15,6 +15,10 @@ add_library(${LIB_UTILS} STATIC ${LIB_UTILS_SRC} ${LIB_UTILS_INC})
 target_include_directories(${LIB_UTILS} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set_target_properties(${LIB_UTILS} PROPERTIES PUBLIC_HEADER "${LIB_UTILS_INC}")
 
+if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Windows")
+target_compile_options(${LIB_UTILS} PRIVATE /W1)
+endif()
+
 # check target
 set(TEST_BIN test-utils)
 file(GLOB TEST_SRC

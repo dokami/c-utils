@@ -13,6 +13,7 @@
  *   A good explanation can be found at https://www.cmrr.umn.edu/~strupp/serial.html
  */
 
+#ifndef WIN32
 
 #include <stdio.h>
 #include <string.h>
@@ -294,3 +295,5 @@ void serial_assert_rts(struct serial *ctx, int state)
 		perror("unable to set portstatus");
 	}
 }
+
+#endif

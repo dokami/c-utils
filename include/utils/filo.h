@@ -11,7 +11,7 @@
 #include <stdbool.h>
 
 typedef struct {
-    void *buffer;
+    uint8_t *buffer;
     size_t top;
     size_t elem_size;
     size_t max_size;

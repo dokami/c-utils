@@ -17,7 +17,8 @@ set_target_properties(${LIB_UTILS} PROPERTIES PUBLIC_HEADER "${LIB_UTILS_INC}")
 
 if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Windows")
 target_compile_options(${LIB_UTILS} PRIVATE /W1)
-endif()
+
+else()
 
 # check target
 set(TEST_BIN test-utils)
@@ -44,3 +45,5 @@ add_custom_target(check_utils
 	COMMAND rm ${CMAKE_BINARY_DIR}/${TEST_BIN}
 	DEPENDS ${TEST_BIN}
 )
+
+endif()
